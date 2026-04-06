@@ -4,6 +4,7 @@ privwatch - a Linux security auditing tool designed to analyze running processes
 uncover potential privilege escalation vectors.
 
 Author: c0d3Ninja
+Website: https://gotr00t0day.github.io
 
 */
 
