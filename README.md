@@ -37,26 +37,9 @@ g++ -std=c++20 -Wall -Wextra -O2 -o processmonitor tools/processmonitor.cpp
 Or from `tools/`:
 
 ```bash
-g++ -std=c++20 -Wall -Wextra -O2 -o processmonitor processmonitor.cpp
+g++ -DPROCESSMONITOR_STANDALONE -std=c++20 processmonitor.cpp -I. -o processmonitor
 ```
 
 No extra libraries are required beyond the C++ standard library and POSIX (`unistd`, `pwd`, `sys/stat`).
-
-## Build (ShadowHarvester)
-
-`processmonitor.cpp` is compiled as part of the main `shadowharvester` target in the project `Makefile` (together with `processmonitor.h`, which declares `getProcess()` for linkage with the rest of the project). The standalone program above uses only the `.cpp` file’s `main()`.
-
-## Files
-
-| File | Role |
-|------|------|
-| `tools/processmonitor.cpp` | Implementation and `main()` for the standalone tool |
-| `tools/processmonitor.h` | `std::vector<std::string> getProcess()` for integration with ShadowHarvester |
-
-## Limitations
-
-- Heuristic only: many writable paths are benign; some risky cases may be missed.
-- Interpreter and “absolute path argument” detection is substring- and path-shape-based, not a full parser.
-- Requires permission to read the relevant `/proc` entries (typical unprivileged users see their own processes; root sees all).
 
 Use only on systems you are authorized to assess.
