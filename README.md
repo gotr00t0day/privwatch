@@ -1,6 +1,6 @@
 # privwatch
 
-![Alt text]([https://github.com/gotr00t0day/URLVPwn/blob/main/urlvpwn.jpg](https://github.com/gotr00t0day/privwatch/blob/main/zczxczxc.jpeg))
+![Alt text](https://github.com/gotr00t0day/privwatch/blob/main/zczxczxc.jpeg)
 
 Linux process auditor that walks `/proc`, prints each running process with PID, command name, owning user, full command line, and flags **writable execution targets** when the process runs as **root** but a resolved path is **not** owned by root and is **group- or world-writable**. That pattern is a common privilege-escalation signal (root executing code others can modify).
 
