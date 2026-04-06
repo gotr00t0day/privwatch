@@ -34,12 +34,6 @@ From the repository root:
 g++ -std=c++20 -Wall -Wextra -O2 -o processmonitor tools/processmonitor.cpp
 ```
 
-Or from `tools/`:
-
-```bash
-g++ -DPROCESSMONITOR_STANDALONE -std=c++20 processmonitor.cpp -I. -o processmonitor
-```
-
 No extra libraries are required beyond the C++ standard library and POSIX (`unistd`, `pwd`, `sys/stat`).
 
 Use only on systems you are authorized to assess.
