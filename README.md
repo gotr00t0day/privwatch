@@ -31,7 +31,7 @@ The risk suffix is empty when no matching target is found.
 From the repository root:
 
 ```bash
-g++ -std=c++20 -Wall -Wextra -O2 -o processmonitor tools/processmonitor.cpp
+g++ -DPROCESSMONITOR_STANDALONE -std=c++20 processmonitor.cpp -I. -o processmonitor
 ```
 
 No extra libraries are required beyond the C++ standard library and POSIX (`unistd`, `pwd`, `sys/stat`).
