@@ -1,4 +1,4 @@
-# processmonitor (privwatch)
+# privwatch
 
 Linux process auditor that walks `/proc`, prints each running process with PID, command name, owning user, full command line, and flags **writable execution targets** when the process runs as **root** but a resolved path is **not** owned by root and is **group- or world-writable**. That pattern is a common privilege-escalation signal (root executing code others can modify).
 
@@ -31,7 +31,7 @@ The risk suffix is empty when no matching target is found.
 From the repository root:
 
 ```bash
-g++ -DPROCESSMONITOR_STANDALONE -std=c++20 processmonitor.cpp -I. -o processmonitor
+g++ -DPROCESSMONITOR_STANDALONE -std=c++20 privwatch.cpp -I. -o privwatch
 ```
 
 No extra libraries are required beyond the C++ standard library and POSIX (`unistd`, `pwd`, `sys/stat`).
